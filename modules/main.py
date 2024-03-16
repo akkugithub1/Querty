@@ -22,10 +22,11 @@ from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-bot = Client("bot",
-             bot_token= "6569259231:AAFYgPds2PKc_pot3J3fz5IRgj1Z2KE6U2Y",
-             api_id=29403305,
-             api_hash= "54c435573d0f2d9dada270a0cb493b36")
+bot = Client(
+    "bot",
+    api_id=api_id,
+    api_hash=api_hash,
+    bot_token=bot_token)
 
 
 @bot.on_message(filters.command(["start"]))
@@ -161,8 +162,8 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**Vid_id  »** {str(count).zfill(3)}\n**Title  »** {name1} {res} .mkv\n**Batch »** {raw_text0}\n**Download by »** {raw_text3}\n\n'
-                cc1 = f'**Vid_id  »** {str(count).zfill(3)}\n**Title »** {name1} .pdf \n**Batch »** {raw_text0}\n**Download by »** {raw_text3}\n\n'
+                cc = f'** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mp4\n**Batch »** {raw_text0}\n\n'
+                cc1 = f'** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n**Batch »** {raw_text0}\n\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -206,3 +207,6 @@ async def account_login(bot: Client, m: Message):
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("Done")
+
+
+bot.run()

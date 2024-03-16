@@ -160,10 +160,8 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:  
-                
-                cc = f'[📽] Vid_ID: {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ » {raw_text0}'
-                cc1 = f'[📁] Pdf_ID: {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n𝔹ᴀᴛᴄʜ » {raw_text0}'
-                if "drive" in url:
+                                cc = f'[ 🎬 ] Vid ID : {str(count).zfill(3)}\n**Video Title : {name1}({res}) .mp4\n**Batch Name : {b_name}\n\n**Extracted By ➤** {CR}'
+                cc1 = f'[ 📕 ] Pdf ID : {str(count).zfill(3)}\n**File Title : {name1} .pdf\n**Batch Name :{b_name}\n\n**Extracted By ➤** {CR}'
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)

@@ -160,8 +160,9 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:  
-                                                cc = f'[ 🎬 ] Vid ID : {str(count).zfill(3)}\n**Video Title : {name1}({res}) .mp4\n**Batch Name : {b_name}\n\n**Extracted By ➤** {CR}'
-                cc1 = f'[ 📕 ] Pdf ID : {str(count).zfill(3)}\n**File Title : {name1} .pdf\n**Batch Name :{b_name}\n\n**Extracted By ➤** {CR}'
+                
+                cc = f'**Vid_id  »** {str(count).zfill(3)}\n**Title  »** {name1} {res} .mkv\n**Batch »** {raw_text0}\n**Download by »** {raw_text3}\n\n'
+                cc1 = f'**Vid_id  »** {str(count).zfill(3)}\n**Title »** {name1} .pdf \n**Batch »** {raw_text0}\n**Download by »** {raw_text3}\n\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -205,6 +206,3 @@ async def account_login(bot: Client, m: Message):
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("Done")
-
-
-bot.run()
